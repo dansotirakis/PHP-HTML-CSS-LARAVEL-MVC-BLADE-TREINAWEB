@@ -1,5 +1,7 @@
 <?php
 
+use PhpParser\Node\Stmt\Return_;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -14,7 +16,9 @@ Route::get('/test',function(){
     return 'TreinaWeb';
 });
 
-
+Route::get('inicio/{nome}',function($nome){
+    Return "Bem vindo, $nome! ";
+});
 Route::get('/', function () {
     return view('welcome');
 });
