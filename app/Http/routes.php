@@ -16,9 +16,25 @@ Route::get('/test',function(){
     return 'TreinaWeb';
 });
 
-Route::get('inicio/{nome}',function($nome){
-    Return "Bem vindo, $nome! ";
-});
+Route::get('inicio/{nome}/{pronome?}',['as' => 'home' ,function($nome, $pronome = 'Sr.'){
+    Return view('inicio',['nome'=>$nome]);
+}])->where('nome','[A-Za-z]+');
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+//rotas bootstrap template
+
+Route::get('/home', function () {
+    return view('testBootstrap');
+});
+Route::get('/sobre', function () {
+    return view('sobre');
+});
+Route::get('/contato', function () {
+    return view('contato');
+});
+Route::post('/contato', function () {
+    return $request->all();
 });
