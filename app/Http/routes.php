@@ -20,21 +20,21 @@ Route::get('inicio/{nome}/{pronome?}',['as' => 'home' ,function($nome, $pronome 
     Return view('inicio',['nome'=>$nome]);
 }])->where('nome','[A-Za-z]+');
 
-Route::get('/', function () {
+Route::get('breniak', function () {
     return view('welcome');
 });
 
 //rotas bootstrap template
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('testBootstrap');
 });
-Route::get('/sobre', function () {
+Route::get('sobre', function () {
     return view('sobre');
 });
-Route::get('/contato', function () {
+Route::get('contato', function () {
     return view('contato');
 });
-Route::post('/contato', function () {
-    return $request->all();
+Route::post('contato', function () {
+    return Request::all();
 });
