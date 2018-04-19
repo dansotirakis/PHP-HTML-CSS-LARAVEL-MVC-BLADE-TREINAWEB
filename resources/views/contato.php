@@ -40,7 +40,7 @@
 
       <div>
         <h1>Entre em contato:</h1>
-        <form action="#" method="POST">
+        <form action="<?= route('contato.send')?>" method="POST">
           
           <?= csrf_field(); ?>
           

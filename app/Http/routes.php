@@ -1,6 +1,5 @@
 <?php
 
-use PhpParser\Node\Stmt\Return_;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,29 +11,20 @@ use PhpParser\Node\Stmt\Return_;
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/test',function(){
-    return 'TreinaWeb';
-});
-
-Route::get('inicio/{nome}/{pronome?}',['as' => 'home' ,function($nome, $pronome = 'Sr.'){
-    Return view('inicio',['nome'=>$nome]);
-}])->where('nome','[A-Za-z]+');
-
-Route::get('breniak', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
-//rotas bootstrap template
+Route::group(['prefix'=>'institucional'], function() {
 
-Route::get('/', function () {
-    return view('testBootstrap');
-});
-Route::get('sobre', function () {
-    return view('sobre');
-});
-Route::get('contato', function () {
-    return view('contato');
-});
-Route::post('contato', function () {
-    return Request::all();
+    Route::get('sobre', ['as' => 'sobre', function () {
+        return view('sobre');
+    }]);
+    Route::get('contato', ['as' => 'contato', function () {
+        return view('contato');
+    }]);
+    Route::post('contato', ['as' => 'contato.send', function () {
+        return Request::all();
+    }]);
+
 });

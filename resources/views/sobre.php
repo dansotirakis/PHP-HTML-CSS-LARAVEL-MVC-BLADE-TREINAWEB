@@ -32,7 +32,7 @@
             <li><a href="<?= url('sobre') ?>">Sobre</a></li>
             <li><a href="<?= url('contato') ?>">Contato</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </nav>
 
@@ -44,7 +44,7 @@
           Vestibulum congue sollicitudin sodales. Nullam ultrices efficitur lectus.</p>
       </div>
 
-    </div><!-- /.container -->
+    </div>
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
