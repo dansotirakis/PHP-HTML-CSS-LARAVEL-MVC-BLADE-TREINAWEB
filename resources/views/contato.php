@@ -8,37 +8,44 @@
   
     <title>Voluntarios</title>
 
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.0/examples/starter-template/starter-template.css" rel="stylesheet">
 
   </head>
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Voluntarios</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="<?= url('sobre') ?>">Sobre</a></li>
-            <li><a href="<?= url('contato') ?>">Contato</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+     <!--Barra-->
+     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="/">Voluntario</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= route('sobre')?>">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= route('contato')?>">Contato</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div> 
     </nav>
 
-    <div class="container">
+    <main role="main" class="container">
 
-      <div>
+      <div class="">
         <h1>Entre em contato:</h1>
         <form action="<?= route('contato.send')?>" method="POST">
           
@@ -64,7 +71,7 @@
         </form>
       </div>
 
-    </div><!-- /.container -->
+    </main><!-- /.container -->
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
